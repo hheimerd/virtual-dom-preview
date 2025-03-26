@@ -16,8 +16,20 @@
       {
         "command": "react-testing-library-preview-renderer.render",
         "title": "Render"
+      },
+      {
+        "command": "react-testing-library-preview-renderer.openBrowser",
+        "title": "Open Browser"
       }
-    ]
+    ],
+    "menus": {
+        "webview/title": [
+            {
+                "command": "react-testing-library-preview-renderer.openBrowser",
+                "group": "navigation"
+            }
+        ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "pnpm run package",
