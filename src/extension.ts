@@ -10,7 +10,15 @@ async function renderPanel(session: vscode.DebugSession) {
     panel = vscode.window.createWebviewPanel(
       "imagePreview",
       "Preview",
-      vscode.ViewColumn.Beside,
+      {
+        viewColumn: vscode.ViewColumn.Beside,
+        preserveFocus: true,
+      },
+      {
+        enableScripts: false,
+        retainContextWhenHidden: true,
+        localResourceRoots: [],
+      }
     );
 
     panel.onDidDispose(() => {
@@ -23,11 +31,11 @@ async function renderPanel(session: vscode.DebugSession) {
 
 export function activate(context: vscode.ExtensionContext) {
   const disposable = vscode.commands.registerCommand(
-    "react-testing-library-preview-renderer.render",
+    "virtual-dom-preview.render",
     async () => {
       const session = vscode.debug.activeDebugSession;
       if (!session) {
-        vscode.window.showErrorMessage("Нет активного дебаг сеанса!");
+        vscode.window.showErrorMessage("Debug session not found!");
         return;
       }
       renderPanel(session);
@@ -45,11 +53,11 @@ export function activate(context: vscode.ExtensionContext) {
 
   // Register command to open browser
   const openBrowserCommand = vscode.commands.registerCommand(
-    "react-testing-library-preview-renderer.openBrowser",
+    "virtual-dom-preview.openBrowser",
     async () => {
       const session = vscode.debug.activeDebugSession;
       if (!session) {
-        vscode.window.showErrorMessage("Нет активного дебаг сеанса!");
+        vscode.window.showErrorMessage("Debug session not found!");
         return;
       }
 
@@ -75,11 +83,11 @@ export function activate(context: vscode.ExtensionContext) {
           res.writeHead(200, { "Content-Type": "text/html" });
           res.end(html + `
             <script>
-                const eventSource = new EventSource('/events'); // Подключаемся к серверу для получения событий
+                const eventSource = new EventSource('/events');
 
                 eventSource.onmessage = function(event) {
                     if (event.data === 'reload') {
-                        window.location.reload(); // Перезагружаем страницу при получении события
+                        window.location.reload();
                     }
                 };
             </script>
@@ -152,7 +160,7 @@ function startWatchingBreakpoints(
 
   vscode.debug.onDidTerminateDebugSession((session) => {
     if (session.id === debugSession.id) {
-      disposable.dispose(); // Отписываемся, когда отладка завершена
+      disposable.dispose(); // stop watching breakpoints
       onTerminate();
     }
   });

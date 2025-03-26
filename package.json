@@ -1,35 +1,29 @@
 {
-  "name": "react-testing-library-preview-renderer",
-  "displayName": "React Testing Library preview renderer",
-  "description": "View your current app state during debug",
-  "version": "0.0.1",
+  "name": "virtual-dom-preview",
+  "displayName": "Virtual DOM renderer",
+  "description": "View your current app state during debug tests",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.97.0"
   },
   "categories": [
-    "Other"
+    "Debuggers",
+    "Visualization",
+    "Testing"
   ],
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "react-testing-library-preview-renderer.render",
-        "title": "Render"
+        "command": "virtual-dom-preview.render",
+        "title": "DOM Renderer: Open in split view"
       },
       {
-        "command": "react-testing-library-preview-renderer.openBrowser",
-        "title": "Open Browser"
+        "command": "virtual-dom-preview.openBrowser",
+        "title": "DOM Renderer: Open in Browser"
       }
-    ],
-    "menus": {
-        "webview/title": [
-            {
-                "command": "react-testing-library-preview-renderer.openBrowser",
-                "group": "navigation"
-            }
-        ]
-    }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "pnpm run package",
