@@ -1,6 +1,11 @@
 {
   "name": "virtual-dom-preview",
-  "displayName": "Virtual DOM renderer",
+  "displayName": "Virtual DOM preview",
+  "author": "hheimerd",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hheimerd/virtual-dom-preview"
+  },
   "description": "View your current app state during debug tests",
   "version": "1.0.0",
   "engines": {
@@ -11,17 +16,18 @@
     "Visualization",
     "Testing"
   ],
+  "icon": "assets/icon.png",
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "virtual-dom-preview.render",
-        "title": "DOM Renderer: Open in split view"
+        "title": "DOM Preview: Open in split view"
       },
       {
         "command": "virtual-dom-preview.openBrowser",
-        "title": "DOM Renderer: Open in Browser"
+        "title": "DOM Preview: Open in Browser"
       }
     ]
   },
@@ -51,8 +57,5 @@
     "eslint": "^9.19.0",
     "npm-run-all": "^4.1.5",
     "typescript": "^5.7.3"
-  },
-  "dependencies": {
-    "@hheimerd/safe-json-stringify": "^1.0.3"
   }
 }

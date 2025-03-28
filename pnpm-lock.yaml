@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  '@hheimerd/safe-json-stringify':
-    specifier: ^1.0.3
-    version: 1.0.3
-
 devDependencies:
   '@types/mocha':
     specifier: ^10.0.10
@@ -349,12 +344,6 @@ packages:
       '@eslint/core': 0.10.0
       levn: 0.4.1
     dev: true
-
-  /@hheimerd/safe-json-stringify@1.0.3:
-    resolution: {integrity: sha512-yR0j3fi9UgNUTPhB+RFO00BGQWXwjBnxRlVUIXngu6S7M8pM2J4I1sz7mBkXKHmM7NsnwecL08r60uaV9kxPbQ==}
-    dependencies:
-      typescript: 5.4.5
-    dev: false
 
   /@humanfs/core@0.19.1:
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -2838,12 +2827,6 @@ packages:
       possible-typed-array-names: 1.1.0
       reflect.getprototypeof: 1.0.10
     dev: true
-
-  /typescript@5.4.5:
-    resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
-    engines: {node: '>=14.17'}
-    hasBin: true
-    dev: false
 
   /typescript@5.7.3:
     resolution: {integrity: sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==}

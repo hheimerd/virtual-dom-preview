@@ -1,71 +1,41 @@
-# react-testing-library-preview-renderer README
+# Virtual DOM preview
 
-This is the README for your extension "react-testing-library-preview-renderer". After writing up a brief description, we recommend including the following sections.
+![example](./assets/state_1.png)
 
-## Features
+This extension allows you to view the current state of your application during debug tests. It provides a WebView panel to render the DOM and an option to open it in a browser.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## Important
 
-For example if there is an image subfolder under your extension project workspace:
+To properly render your application, you need to configure CSS handling in your test environment. If you're unsure how to do this, check out the ready-to-use template project with configured CSS support:  
+[React Testing Library with CSS Template](https://github.com/hheimerd/rlt-with-css-template).
 
-\!\[feature X\]\(images/feature-x.png\)
+We recommend using the package `@hheimerd/jest-transform-css` for CSS transformation in your tests. This package is a temporary fork of `jest-transform-css` with added support for debugging. You can install it with:
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+```bash
+pnpm add -D @hheimerd/jest-transform-css
+```
 
-## Requirements
+## Usage
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+### Open in VSCode
 
-## Extension Settings
+1. Start a debug session in Visual Studio Code.
+2. Run the command `DOM Renderer: Open in split view` from the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P` on macOS).
+3. A WebView panel will open beside your editor, displaying the DOM structure.
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+![command palette](./assets/command_palette.png)
 
-For example:
+### Open in Browser
 
-This extension contributes the following settings:
+1. Run the command `DOM Renderer: Open in Browser` from the Command Palette.
+2. Enter the port for the preview server (default is `6060`).
+3. The DOM will open in your default browser.
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+### Open Developer Tools (Devtools)
 
-## Known Issues
+To debug or inspect the WebView, you can open the Visual Studio Code Developer Tools:
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+1. Go to the menu: **Help** > **Toggle Developer Tools**.
+2. In the Developer Tools window, navigate to the `Console` or `Elements` tab to inspect the WebView content.
 
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+![devtools](./assets/devtools.png)
