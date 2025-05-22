@@ -2,12 +2,13 @@
   "name": "virtual-dom-preview",
   "displayName": "Virtual DOM preview",
   "author": "hheimerd",
+  "publisher": "hheimerd",
   "repository": {
     "type": "git",
     "url": "https://github.com/hheimerd/virtual-dom-preview"
   },
   "description": "View your current app state during debug tests",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "vscode": "^1.97.0"
   },
