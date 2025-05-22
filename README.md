@@ -9,11 +9,7 @@ This extension allows you to view the current state of your application during d
 To properly render your application, you need to configure CSS handling in your test environment. If you're unsure how to do this, check out the ready-to-use template project with configured CSS support:  
 [React Testing Library with CSS Template](https://github.com/hheimerd/rlt-with-css-template).
 
-We recommend using the package `@hheimerd/jest-transform-css` for CSS transformation in your tests. This package is a temporary fork of `jest-transform-css` with added support for debugging. You can install it with:
-
-```bash
-pnpm add -D @hheimerd/jest-transform-css
-```
+We recommend using the package `jest-transform-css` for CSS transformation in your tests. [Installation Guide](https://github.com/dferber90/jest-transform-css?tab=readme-ov-file#setup)
 
 ## Usage
 
